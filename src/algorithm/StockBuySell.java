@@ -1,9 +1,11 @@
 package algorithm;
 
-//The cost of a stock on each day is given in an array, find the max profit that you can make by buying and selling in those days. 
+//The cost of a stock on each day is given in an array, find the max profit that you can make 
+//by buying and selling in those days. 
 //
 //Input:
-//First line contains number of test cases T. Each test case contain the integer value 'N' denoting days followed by an array of stock prices in N days.
+//First line contains number of test cases T. Each test case contain the integer value 'N'
+//denoting days followed by an array of stock prices in N days.
 //Output:
 //The maximum profit is displayed as shown below. And if there is no profit then print "No Profit".
 //

@@ -1,0 +1,84 @@
+[16, 3, 5, 19, 10, 14, 12, 0, 21]
+21 12 10 5 3
+21 0
+21 14 
+1 2 3 4 5 6
+to
+
+
+16 19
+
+
+
+3 5 19 21
+    10 14 21
+    10 12 21
+
+getList(Node node)
+    list.push( node.value )// till parent the length will be same
+    childList
+    from i =0 to node.list.length
+        childList.add(getList(node.list[i]))
+
+    maxSizeIndex = -1
+    currentMaxSize = 0;
+    from i = 0 to childList.length 
+        if(childList[i].size > currentMaxSize)    
+            currentMaxSize = childList[i].size
+            maxSizeIndex = i
+
+    return list.join(childList[i])
+
+
+
+    0 0 1 0
+    0 0 1 0
+    1 0 0 0
+    0 0 0 1
+
+    backtracking from 0,3  1 1,3
+    1,3 1 from 2,3 
+    2,3 1 from 2,2
+    2,2 2 from 2,1  3,2
+        2,1 1 from  3,1
+        3,2 1 from 3,1
+            3,1 1 from 3,0
+
+
+    0 0 0 0
+    0 1 0 0
+    0 0 1 0
+    0 0 0 0
+
+
+    0 0 0 0
+    0 0 0 0
+    0 1 1 0
+    0 0 0 0
+
+
+    int count_the_paths(List<String> grid) {
+        gridArray = grid.toArray()  [0000 0000 0110 0000]
+        pathCount = 0;
+        totalPath = traverseBack(gridArray,0,gridArray[0].length)
+    }
+    
+    validBlockIndex(i,j,n,m,grid) i less than n and j less than m
+        if(i<n&&j>0)
+            if(grid[i].chatAt()!=1)
+                return true
+
+        return false
+    
+
+    traverseBack(grid,n,m)
+        if(n==grid.length&&m==0){ n=0 m=3
+            return 1
+        }
+        if(validBlockIndex(n,m,grid.length,grid[0].length)){
+            return 0
+        }
+
+        return traverseBack(gridArray,n-1,m)+traverseBack(gridArray,n,m-1);
+
+

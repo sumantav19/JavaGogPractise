@@ -62,21 +62,18 @@ public class TrappingRainWater {
 			}
 			//compare from left
 			int waterFilled = 0;
-			int waterCounter = 0;
-			for(int j = 0; j < testDataLength-2;j++){
-				int current  = Integer.parseInt(testData[j]);
-				waterCounter = current;
-				while(current == maxFromRightArray[j] ){
-					waterCounter = maxFromRightArray[j];
-					j++;
-				}				
-				j++;
-				current =  Integer.parseInt(testData[j]);
-				while(current != maxFromRightArray[j]){
-					waterFilled += (waterCounter - current);
-					
-					j++;
-					current = Integer.parseInt(testData[j]);
+			//int waterCounter = 0;
+			int leftMax = Integer.parseInt(testData[0]);
+			int rightMax = maxFromRightArray[0];
+			for(int j = 1; j < testDataLength;j++){
+				int current = Integer.parseInt(testData[j]);
+				rightMax = maxFromRightArray[j];
+				if(current > leftMax){
+					leftMax = current;
+				}else if(leftMax <= rightMax){
+					waterFilled+=(leftMax - current);
+				}else if(leftMax > rightMax){
+					waterFilled+=(rightMax-current);
 				}
 			}
 			System.out.println(waterFilled);
